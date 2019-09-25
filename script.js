@@ -40,4 +40,15 @@ function mostrarTodosLosContactos(){
     contactos.forEach(mostrarContacto)
 }
 
+function abrirModal(){
+    var body = document.getElementsByTagName("body");
+    var body = bodyTags[0];
+    body.classList.add("modal-open");
+}
+
+function cerrarModal(){
+    var body = document.getElementsByTagName("body");
+    var body = bodyTags[0];
+    body.classList.add("modal-open");
+}
 mostrarTodosLosContactos();
