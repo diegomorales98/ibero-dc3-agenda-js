@@ -9,3 +9,35 @@ var contactos = [
     telefono: "5555555555" }
 ];
 
+function mostrarContacto(){
+ var contactos =document.getElementById("contactos");
+    contenedorContactos.insertAdjacentHTML("beforeend",
+                                           
+    `<li class="contacto">
+        <div class="actions">
+          <a><i class="fa fa-trash"></i></a>
+        </div>
+        <i class="userIcon fa fa-user"></i>
+        <h4 class="nombre">`+ contacto.nombre +`</h4>
+        <div class="datos">
+          <div class="dato">
+            <i class="fa fa-building"></i>
+            <span>`+ contacto.empresa +`</span>
+          </div>
+          <div class="dato">
+            <i class="fa fa-envelope"></i>
+            <a href="mailto:`+ contacto.email +`">`+ contacto.email +`</a>
+          </div>
+          <div class="dato">
+            <i class="fa fa-phone"></i>
+            <a href="tel:`+ contacto.telefono +`">`+ contacto.telefono +`</a>
+          </div>
+        </div>
+      </li>`);
+}
+
+function mostrarTodosLosContactos(){
+    contactos.forEach(mostrarContacto)
+}
+
+mostrarTodosLosContactos();
