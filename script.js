@@ -37,7 +37,7 @@ function mostrarContacto(){
 }
 
 function mostrarTodosLosContactos(){
-    contactos.forEach(mostrarContacto)
+    contactos.forEach(mostrarContacto);
 }
 
 function abrirModal(){
@@ -51,4 +51,57 @@ function cerrarModal(){
     var body = bodyTags[0];
     body.classList.add("modal-open");
 }
+
+function validarContacto(){
+    var nombre = document.getElementById("nombre").value;
+    var email = document.getElementById("email").vañue;
+    var errores = [];
+    
+    if(nombre.lenght===0){
+        errores.push("El nombre no puede estar vacio");
+    }
+    if (email.lenght===0){
+        errores.push("El mail no puede estar valido");
+    }
+    
+if(errores.lenght===0){
+    agregarContacto();
+}else{
+    mostrarErrores();
+}
+}
+
+function agregarContacto(){
+    var nombre = document.getElementById("nombre").value;
+     var nombre = document.getElementById("empresa").value;
+     var nombre = document.getElementById("email").value;
+     var nombre = document.getElementById("telefono").value;
+         
+contactos.push({
+         nombre,
+         empresa,
+         email,
+         telefono,
+        
+     });
+    
+    mostrarTodosLosContactos();
+    limpiarFormulario();
+    cerrarModal();
+}
+
+function LimpiarFormulario(){
+    document.getElementById("nombre").value="";
+    document.getElementById("empresa").value="";
+    document.getElementById("email").value="";
+    document.getElementById("telefono").value="";
+}
+
+function mostrarErrores(errores){
+    var contenedorErrores = document.getElementById("errores");
+    contenedorErrores.innerHTML="";
+    errores.forEach(function(error){
+    contenedorErrores.insertAdjacentHTML('beforeend', '<li>' + error + '</li<');
+    }
+                    }
 mostrarTodosLosContactos();
